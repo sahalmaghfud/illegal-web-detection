@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Web Content Detector",
+  "version": "1.0",
+  "description": "Mendeteksi situs web secara otomatis (Judi Online, Pornografi, Pembajakan) melalui 4 lapisan.",
+  "icons": {
+    "16": "icon/logo.png",
+    "32": "icon/logo.png",
+    "48": "icon/logo.png",
+    "128": "icon/logo.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:8000/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": {
+      "16": "icon/logo.png",
+      "32": "icon/logo.png",
+      "48": "icon/logo.png",
+      "128": "icon/logo.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["data/domains.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
