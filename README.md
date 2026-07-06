@@ -5,36 +5,47 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-ee4c2c.svg)
 ![License](https://img.shields.io/badge/License-Academic-green.svg)
 
-A **Multimodal Machine Learning** system for detecting illegal websites by combining **visual** and **textual** information. The system integrates **EfficientNetV2-M** for screenshot analysis and **DistilBERT** for webpage text analysis, then deploys the trained model through a **browser extension** for real-time website detection.
+A **Multimodal Machine Learning** system for detecting illegal websites by combining **visual** and **textual** information. The system leverages **EfficientNetV2-M** for webpage screenshot analysis and **DistilBERT** for webpage text analysis, then deploys the trained model through a **browser extension** for real-time website detection.
 
 ---
 
-## 📖 Overview
+ 🎓 **Academic Project**
+This repository contains the implementation of my undergraduate thesis conducted as a student of the **Information Systems** program at **Universitas Jambi**.
 
-Illegal websites often employ deceptive visual layouts and persuasive textual content to attract users. Relying on only one modality frequently leads to reduced detection performance.
+# 📖 Overview
 
-This project addresses the problem by combining:
+Illegal websites often employ deceptive visual designs and persuasive textual content to attract users. Traditional detection methods that rely on only a single modality frequently suffer from limited accuracy and poor generalization.
 
-- 🖼️ **Visual Features** extracted from webpage screenshots using EfficientNetV2-M.
-- 📝 **Textual Features** extracted from webpage content using DistilBERT.
-- 🌐 **Browser Extension** that performs automatic detection while users browse the web.
-- ⚡ **FastAPI Backend** that serves the trained deep learning models.
+## 📂 Project Organization
+
+* **📊 Data Collection & Model Training** – The source code for data collection, preprocessing, model training, and evaluation is available on **[Google Drive](https://drive.google.com/drive/folders/1VfCR32NTM8lC74LW2qCrxWccYIHRffuV?usp=drive_link)**. The dataset used in this project is publicly available on **[Kaggle](https://www.kaggle.com/datasets/sahalmaghfud/illegal-web/data)**.
+
+* **🌐 System Implementation** – This repository contains the implementation of the trained models, including the FastAPI backend and browser extension for real-time illegal website detection.
+
+This project addresses these challenges by integrating multiple sources of information into a unified multimodal framework. It combines:
+
+- 🖼️ **Visual Features** extracted from webpage screenshots using **EfficientNetV2-M**.
+- 📝 **Textual Features** extracted from webpage content using **DistilBERT**.
+- 🧠 **Feature Fusion** through a Multilayer Perceptron (MLP) classifier.
+- 🌐 **Browser Extension** for automatic website detection during web browsing.
+- ⚡ **FastAPI Backend** for serving trained deep learning models in real time.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
 - 🔍 Multimodal website classification using visual and textual information.
-- 🖼️ Screenshot analysis with **EfficientNetV2-M**.
-- 📝 Text analysis with **DistilBERT**.
+- 🖼️ Webpage screenshot analysis with **EfficientNetV2-M**.
+- 📝 Webpage text analysis with **DistilBERT**.
+- 🧠 Feature fusion using an **MLP classifier**.
 - ⚡ FastAPI inference server.
-- 🌐 Browser Extension (Chrome/Edge).
-- 📊 Logging and website reporting system.
+- 🌐 Browser extension compatible with **Google Chrome** and **Microsoft Edge**.
+- 📊 Website logging and reporting system.
 - 🚫 Real-time illegal website detection.
 
 ---
 
-## 🏗️ Project Architecture
+# 🏗️ Project Architecture
 
 ```text
                         Browser Extension
@@ -53,90 +64,92 @@ This project addresses the problem by combining:
                └───────────────┬───────────────┘
                                ▼
                     Multimodal Classifier
+                        (MLP Fusion)
                                ▼
                      Website Classification
 ```
+
 ---
 
-## 🛠 Technology Stack
+# 🛠️ Technology Stack
 
 | Component | Technology |
-|------------|------------|
+|-----------|------------|
 | Backend | FastAPI |
-| Deep Learning | PyTorch |
-| Visual Model | EfficientNetV2-M |
-| Text Model | DistilBERT |
+| Deep Learning Framework | PyTorch |
+| Visual Encoder | EfficientNetV2-M |
+| Text Encoder | DistilBERT |
+| Classifier | Multilayer Perceptron (MLP) |
 | Browser Extension | JavaScript |
 
 ---
 
 # 🚀 Getting Started
 
-## 1. Clone Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/sahalmaghfud/illegal-web-detection.git
 
-cd REPOSITORY_NAME
+cd illegal-web-detection
 ```
 
 ---
 
-## 2. Install Backend
+## 2. Set Up the Backend
 
-Masuk ke folder server.
+Navigate to the backend directory.
 
 ```bash
 cd server
 ```
 
-Install seluruh dependency.
+Install all required dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Download model yang diperlukan.
+Download the pretrained models.
 
 ```bash
 python3 download_models.py
 ```
 
-Jalankan FastAPI.
+Start the FastAPI server.
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Server akan berjalan di
+The server will be available at:
 
-```
+```text
 http://127.0.0.1:8000
 ```
 
 ---
 
-## 3. Install Browser Extension
+## 3. Install the Browser Extension
 
-1. Buka Chrome atau Microsoft Edge.
-2. Masuk ke:
+1. Open **Google Chrome** or **Microsoft Edge**.
+2. Navigate to:
 
-```
+```text
 chrome://extensions
 ```
 
-3. Aktifkan **Developer Mode**.
-4. Klik **Load unpacked**.
-5. Pilih folder:
+3. Enable **Developer Mode**.
+4. Click **Load unpacked**.
+5. Select the following directory:
 
-```
+```text
 extension/
 ```
 
-6. Extension siap digunakan.
+6. The browser extension is now ready to use.
 
 ---
-
 
 # 📈 Workflow
 
@@ -144,22 +157,57 @@ extension/
 Website
    │
    ▼
-Extract Screenshot + Text
+Capture Screenshot + Extract Text
    │
    ▼
 EfficientNetV2-M + DistilBERT
    │
    ▼
-Feature Fusion
+Feature Fusion (MLP)
    │
    ▼
-MLP Classifier
+Website Classification
    │
    ▼
-Prediction
+Prediction Result
    │
    ▼
-Browser Extension
+Browser Extension Interface
 ```
 
-⭐ If you find this project useful, please consider giving it a **Star** on GitHub.
+---
+
+# 📂 Project Structure
+
+```text
+illegal-web-detection/
+│
+├── extension/          # Browser extension source code
+├── server/             # FastAPI backend
+├── README.md
+└── requirements.txt
+```
+
+---
+
+---
+
+# 📚 Resources
+
+The following resources are available for this project:
+
+| Resource | Description |
+|----------|-------------|
+| 📄 Research Paper | Read the published paper describing the proposed multimodal illegal website detection system. |
+| 📊 Dataset (Kaggle) | Download the dataset used for training and evaluation. |
+| 💾 Google Drive | Access trained models, additional datasets, and supplementary materials. |
+
+### 🔗 Links
+
+- 📄 **[Research Paper](https://jurnal.harapan.ac.id/index.php/Jikstra/article/view/1485/876)**
+- 📊 **[Kaggle Dataset](https://www.kaggle.com/datasets/sahalmaghfud/illegal-web/data)**
+- 💾 **[Google Drive](https://drive.google.com/drive/folders/1VfCR32NTM8lC74LW2qCrxWccYIHRffuV?usp=drive_link)** 
+
+# ⭐ Support
+
+If you find this project useful for your research or development, please consider giving it a **⭐ Star** on GitHub. Your support helps increase the project's visibility and encourages future improvements.
