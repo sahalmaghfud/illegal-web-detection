@@ -67,8 +67,6 @@ This project addresses the problem by combining:
 | Visual Model | EfficientNetV2-M |
 | Text Model | DistilBERT |
 | Browser Extension | JavaScript |
-| Database | JSON |
-| API | REST |
 
 ---
 
@@ -77,7 +75,7 @@ This project addresses the problem by combining:
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY_NAME.git
+git clone https://github.com/sahalmaghfud/illegal-web-detection.git
 
 cd REPOSITORY_NAME
 ```
@@ -139,40 +137,6 @@ extension/
 
 ---
 
-# 📊 Dataset
-
-The dataset was compiled independently and contains:
-
-- **20,447 unique domains**
-- Website screenshots
-- Extracted webpage text
-- Multiple website categories for illegal website detection
-
----
-
-# 🤖 Deep Learning Models
-
-## Visual Model
-
-- EfficientNetV2-M
-- Input: Website screenshots
-- Output: Visual embedding
-
----
-
-## Text Model
-
-- DistilBERT
-- Input: Webpage text
-- Output: Text embedding
-
----
-
-## Multimodal Fusion
-
-The visual and textual embeddings are concatenated and passed through a Multi-Layer Perceptron (MLP) classifier to produce the final website category prediction.
-
----
 
 # 📈 Workflow
 
@@ -197,46 +161,5 @@ Prediction
    ▼
 Browser Extension
 ```
-
----
-
-# 📜 Publications & Citation
-
-If you use this repository, dataset, or methodology in your research, please cite:
-
-### APA
-
-> Maghfud, S. (2026). *Multimodal Learning Menggunakan EfficientNetV2 dan DistilBERT untuk Deteksi Website Ilegal dan Implementasinya pada Browser Extension*. Universitas Jambi.
-
-### BibTeX
-
-```bibtex
-@article{maghfud2026multimodal,
-  title={Multimodal Learning Menggunakan EfficientNetV2 dan DistilBERT untuk Deteksi Website Ilegal dan Implementasinya pada Browser Extension},
-  author={Maghfud, Sahal},
-  year={2026},
-  publisher={Universitas Jambi}
-}
-```
-
----
-
-# 📄 License
-
-This repository is intended for academic and research purposes.
-
-Please cite the corresponding publication if you use this work in your research.
-
----
-
-# 👨‍💻 Author
-
-**Sahal Maghfud**
-
-Faculty of Science and Technology
-
-Universitas Jambi
-
----
 
 ⭐ If you find this project useful, please consider giving it a **Star** on GitHub.
