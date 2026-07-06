@@ -99,7 +99,7 @@ pip install -r requirements.txt
 Download model yang diperlukan.
 
 ```bash
-python download_models.py
+python3 download_models.py
 ```
 
 Jalankan FastAPI.
