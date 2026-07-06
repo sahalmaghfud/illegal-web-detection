@@ -192,16 +192,6 @@ illegal-web-detection/
 
 ---
 
-# 📚 Resources
-
-The following resources are available for this project:
-
-| Resource | Description |
-|----------|-------------|
-| 📄 Research Paper | Read the published paper describing the proposed multimodal illegal website detection system. |
-| 📊 Dataset (Kaggle) | Download the dataset used for training and evaluation. |
-| 💾 Google Drive | Access trained models, additional datasets, and supplementary materials. |
-
 ### 🔗 Links
 
 - 📄 **[Research Paper](https://jurnal.harapan.ac.id/index.php/Jikstra/article/view/1485/876)**
